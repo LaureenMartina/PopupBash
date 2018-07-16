@@ -1,0 +1,25 @@
+﻿//Zenity
+https://doc.ubuntu-fr.org/zenity
+Outil qui permet d'afficher des boîtes de dialogue GTK+ depuis la ligne de commande
+ou au travers de scripts shell. Il est similaire à gdialog, mais son but est d'être plus simple.
+Il appartient à la même famille que dialog (affichage de pseudo boîtes de dialogue en console),
+xdialog et cdialog, mais il surpasse tous ces projets en ayant un nom bien plus classe.
+
+sudo apt-get install zenity
+
+// Zenitor 3 ou Zenity Generator 3
+https://doc.ubuntu-fr.org/zenitor_3
+
+sudo apt-get install python-glade2 python-vte zenity python-gtksourceview2
+sudo add-apt-repository ppa:hizo/zenitor
+sudo apt-get update
+sudo apt-get install zenitor
+
+
+// awesome
+https://wiki.debian.org/Awesome
+https://awesomewm.org/apidoc/classes/awful.widget.only_on_screen.html
+
+// notify-send
+Outil de notification
+https://memo-linux.com/notify-send-outil-de-notification/
