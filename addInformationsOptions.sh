@@ -1,14 +1,25 @@
 #!/bin/bash
 
+#COLORS
+# Reset
+Color_Off='\033[0m'       # Text Reset
+
+# Regular Colors
+Red='\033[0;31m'          # Red
+Green='\033[0;32m'        # Green
+Yellow='\033[0;33m'       # Yellow
+Purple='\033[0;35m'       # Purple
+Cyan='\033[0;36m'         # Cyan
+
 displayPopup()
 (
     # créer la popup
     if [ -z $(command -v zenity) ]; then
-        echo "Installation de zenity..."
+        echo "$Cyan Installation de zenity... $Color_Off"
         apt-get install zenity
     fi
     if [ -z $(command -v curl) ]; then
-        echo "Installation de curl..."
+        echo "$Cyan Installation de curl... $Color_Off"
         apt install curl
     fi
 
@@ -28,16 +39,16 @@ if [ $? = 0 ]; then
         #vérifier les droits pour l'installation
         fileMeteo="testAPI.sh"
         if [ -f $fileMeteo ]; then
-            echo "Service météo activée"
+            echo "$Purple Service météo activée $Color_Off"
             ./$fileMeteo
         fi
     elif [ $choice == "News" ]; then
         fileNews="news.sh"
         if [ -f $fileNews ]; then
-            echo "Service news activée"
+            echo "$Purple Service news activée $Color_Off"
             ./$fileNews
         fi
     else
-        echo "Arrêt de l'installation..."
+        echo "$Purple Arrêt de l'installation... $Color_Off"
     fi
 fi
