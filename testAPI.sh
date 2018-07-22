@@ -7,6 +7,9 @@ displayWeather()
     if [ -z $(command -v zenity) ]; then
         apt-get install zenity
     fi
+    if [ -z $(command -v jq) ]; then
+        apt-get install jq
+    fi
 
     zenity --title="METEO DU JOUR" --text="Description: $1\nTempérature annoncée: $2°C\navec $3°C min et $4°C max \nHumidité: $5%\nVent: $6" --info
 )
@@ -23,9 +26,9 @@ logWeather()
 
 infoUser=$(curl -s ipinfo.io/23.66.166.151)
 country=$(echo $infoUser | jq -r ".country")
-#echo $country
+echo $country
 city=$(echo $infoUser | jq -r ".city")
-#echo $city
+echo $city
 
 #replace url
 weatherData=$(curl -s "http://api.openweathermap.org/data/2.5/weather?q=$city,$country&units=metric&appid=3543da1a78501f1823db167188346285&lang=fr")
